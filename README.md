@@ -25,23 +25,15 @@ Enter the code for admin.py and models.py
 Execute Django admin and create details for 10 books
 
 ## PROGRAM
+```
+admin.py
 
-Include your code here
-'''
-env1/scripts/activate
-git clone GITHIBLINK
-cd orm
-django-admin startproject myproj
-code .
-cd myproj
-python manage.py startapp myapp
+from django.contrib import admin
+from .models import Employee,EmployeeAdmin
+admin.site.register(Employee,EmployeeAdmin)
 
+models.py
 
-EDIT SETTINGS.PY
-Line: 28
-Line 39
-
-EDIT MODELS.PY
 from django.db import models
 from django.contrib import admin
 class Employee (models.Model):
@@ -53,28 +45,10 @@ class Employee (models.Model):
  
 class EmployeeAdmin(admin.ModelAdmin):
     list_display=('eid','name','salary','age','email')
-
-EDIT ADMIN.PY
-from django.contrib import admin
-from .models import Employee,EmployeeAdmin
-admin.site.register(Employee,EmployeeAdmin)
+```
 
 
-python manage.py makemigrations
-python manage.py migrate
-python manage.py createsuperuser
-python manage.py makemigrations userapp
-python manage.py migrate userapp
-python manage.py runserver 8000
 
-
-cd..
-git add -A
-git config user.name ""
-git config user.email ""
-git commit -m "Success"
-git push GITHUBLINK
-'''
 
 ## OUTPUT
 
