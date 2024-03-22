@@ -1,5 +1,5 @@
 # Ex02 Django ORM Web Application
-## Date: 
+## Date:22.03.2024
 
 ## AIM
 To develop a Django application to store and retrieve data from a Book database using Object Relational Mapping(ORM).
@@ -25,10 +25,59 @@ Execute Django admin and create details for 10 books
 ## PROGRAM
 
 Include your code here
+'''
+env1/scripts/activate
+git clone GITHIBLINK
+cd orm
+django-admin startproject myproj
+code .
+cd myproj
+python manage.py startapp myapp
+
+
+EDIT SETTINGS.PY
+Line: 28
+Line 39
+
+EDIT MODELS.PY
+from django.db import models
+from django.contrib import admin
+class Employee (models.Model):
+    eid=models.IntegerField(primary_key=True)
+    name=models.CharField(max_length=100)
+    salary=models.IntegerField()
+    age=models.IntegerField()
+    email=models.EmailField()
+ 
+class EmployeeAdmin(admin.ModelAdmin):
+    list_display=('eid','name','salary','age','email')
+
+EDIT ADMIN.PY
+from django.contrib import admin
+from .models import Employee,EmployeeAdmin
+admin.site.register(Employee,EmployeeAdmin)
+
+
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py makemigrations userapp
+python manage.py migrate userapp
+python manage.py runserver 8000
+
+
+cd..
+git add -A
+git config user.name ""
+git config user.email ""
+git commit -m "Success"
+git push GITHUBLINK
+'''
 
 ## OUTPUT
 
 Include the screenshot of your admin page.
+![WhatsApp Image 2024-03-22 at 11 26 58_0f57bbb0](https://github.com/veslin23000303/ORM/assets/151148539/5fd634bf-722f-4964-bdc0-9cba6ba533d4)
 
 
 ## RESULT
